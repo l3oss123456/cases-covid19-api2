@@ -1,13 +1,8 @@
-// import axios from "../../../utils/axios"
-// import * as R from "ramda"
-const axios = require("axios");
+const axios = require("../../utils/axios");
 const R = require("ramda");
 
 const list_covid19_all_country = async (country, lastdays) => {
   try {
-    // console.log("country;", country)
-    // const resp = await axios(`GET`, `/Brazil?lastdays=${lastdays}`)
-    // return resp
     let _listData = [];
     let amount_covid19 = 0;
     let amount_deads = 0;

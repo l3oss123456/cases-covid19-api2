@@ -13,4 +13,27 @@ const server = app.listen(appConfig.NODE_PORT, () => {
   console.log(`Server is running on port : ${appConfig.NODE_PORT}`);
 });
 
+const country = [
+  "USA",
+  "Spain",
+  "Italy",
+  "Germany",
+  "France",
+  "UK",
+  "Russia",
+  "Belgium",
+  "Netherlands",
+  "Brazil",
+];
+let lastdays = 1;
+
+setInterval(async () => {
+  const resp = await list_covid19_all_country(country, lastdays);
+  broadcastData(resp);
+  lastdays = lastdays + 1;
+  if (lastdays > 30) {
+    lastdays = 1;
+  }
+}, 3000);
+
 module.exports = server;
