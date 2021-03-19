@@ -7,12 +7,8 @@ const app = new Koa();
 app.use(bodyParser());
 app.use(indexRoute.routes());
 
-// const server = app.listen(appConfig.NODE_PORT).on("error", (err) => {
-//   console.log(err);
-// });
-
 const server = app.listen(appConfig.NODE_PORT, () => {
-    console.log(`Server is running on port : ${appConfig.NODE_PORT}`)
-  })
+  console.log(`Server is running on port : ${appConfig.NODE_PORT}`);
+});
 
 module.exports = server;
