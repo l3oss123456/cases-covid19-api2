@@ -1,3 +1,3 @@
 module.exports = {
-  NODE_PORT: "9000",
+  NODE_PORT: process.env.PORT || "9000",
 };
